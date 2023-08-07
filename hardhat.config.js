@@ -1,3 +1,6 @@
+require("@nomicfoundation/hardhat-toolbox");
+require("dotenv").config();
+
 const FORK_FUJI = true
 const FORK_MAINNET = false
 let forkingData = undefined;
@@ -27,7 +30,7 @@ module.exports = {
       gasPrice: 225000000000,
       chainId: 43113,
       accounts: [
-        // "YOUR PRIVATE KEY HERE"
+        process.env.P_KEY
       ]
     },
     mainnet: {
@@ -35,8 +38,12 @@ module.exports = {
       gasPrice: 225000000000,
       chainId: 43114,
       accounts: [
-        // "YOUR PRIVATE KEY HERE"
+        process.env.P_KEY
       ]
     }
-  }
+  ,
+  etherscan: {
+    apiKey: process.env.API_KEY,
+  },
+}
 }
