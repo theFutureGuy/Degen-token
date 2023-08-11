@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.19;
+pragma solidity ^0.8.10;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
@@ -23,17 +23,17 @@ contract Degen is ERC20, Ownable, ERC20Burnable {
     function redeem(uint8 _choice) public returns(string memory details) {
         if(_choice==1) {
             _burn(msg.sender, 50);
-            return "You get a Tshirt !";
+            return " You Win a Iphone 20";
         }
 
         else if(_choice==2) {
             _burn(msg.sender, 150);
-            return "You get a Gladiator Helmet !";
+            return "You Win a Samsung S44 !";
         }
         
         else if(_choice==3) {
             _burn(msg.sender, 250);
-            return "You get a Golden Chariot !";
+            return "You Win Nothing...!";
         }
     }
 
